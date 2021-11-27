@@ -82,7 +82,7 @@ class Login extends React.Component {
       <form onSubmit={this.handleSubmit} method="post">
         <p> Login Form </p>
 
-        <label>Username</label>
+        <label>E-mail</label>
         <input
           name="username"
           placeholder="Username"
