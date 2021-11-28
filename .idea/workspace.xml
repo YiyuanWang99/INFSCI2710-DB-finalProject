@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24fedbaf-f7df-44f1-900e-3e732e5bdbf5" name="Changes" comment="product2">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.test.js" afterDir="false" />
+    <list default="true" id="24fedbaf-f7df-44f1-900e-3e732e5bdbf5" name="Changes" comment="uodate productlist">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/orderHistory/orderHistory.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/orderHistory/orderHistory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/orderHistory/orderHistory.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/productList/productslist.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,5 +152,17 @@
     <MESSAGE value="product" />
     <MESSAGE value="product2" />
     <option name="LAST_COMMIT_MESSAGE" value="product2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/App.js</url>
+          <line>49</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

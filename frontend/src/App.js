@@ -6,6 +6,8 @@ import Customers from './components/customers/customer.js'
 import Stores from './components/stores/store.js'
 import Products from './components/products/product.js'
 import ProductsList from './components/productList/productslist.js'
+import OrderHistory from './components/orderHistory/orderHistory.js'
+
 import Login from './components/login/login.js'
 import PrivateRoutes from './components/privateRoutes/PrivateRoutes.js'
 
@@ -27,6 +29,8 @@ const Navigation = () => (
       <li><NavLink exact activeClassName="current" to='/store'>Store</NavLink></li>
       <li><NavLink exact activeClassName="current" to='/product'>Product</NavLink></li>
       <li><NavLink exact activeClassName="current" to='/productlist'>Product List</NavLink></li>
+      <li><NavLink exact activeClassName="current" to='/orderhistory'>Order History</NavLink></li>
+
     </ul>
   </nav>
 );
@@ -41,13 +45,14 @@ const Contact = () => (
 
 const Main = () => (
   <Routes>
-//     <Route exact path='/' element={<Home/>}></Route>
+//     <Route exact path='/' element={<Login/>}></Route>
 //     <Route exact path='/customer' element={<Customers/>}></Route>
     {/*<Route exact path='/store' element={<Contact/>}></Route>*/}
     <Route exact path='/store' element={<Stores/>}></Route>
     <Route exact path='/product' element={<Products/>}></Route>
 
     <Route exact path='/productlist' element={<ProductsList/>}></Route>
+    <Route exact path='/orderhistory' element={<OrderHistory/>}></Route>
 
     <Route exact path='/' element={<Login/>}></Route>
     <Route exact path='/customer' element={ <Customers/>}></Route>
