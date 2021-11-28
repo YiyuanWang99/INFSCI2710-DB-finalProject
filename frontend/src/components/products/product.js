@@ -5,26 +5,25 @@
 // render() inlude the page desgin
 // you may want to start read render() first
 import React from 'react';
-import { 
+import {
     Row, Col, Button,
     Card,  CardBody, CardHeader, CardFooter,
     Input, InputGroup, InputGroupAddon,
-    } 
+    }
     from 'reactstrap';
-import './customer.css';
+import './product.css';
 
-class customer extends React.Component {
+class product extends React.Component {
   // ######################### initialzation ###########################
   constructor(props) {
     super(props);
     this.state = {
-        "customerID": "",
+        "productID": "",
         "name": "",
-        "State": "",
-        "City" :"",
-        "Street":"",
-        "ZIP":"",
-        "Phone" :"",
+        "kind": "",
+        "price" :"",
+        "storeID":"",
+        "stock":"",
         "httpStatus": 0,
         "errorMsg": ""
         };
@@ -43,7 +42,7 @@ class customer extends React.Component {
 
   // ######################### click handler ###########################
   handleClick(event) {
-    const serverUrl = "http://localhost:5000/customer";
+    const serverUrl = "http://localhost:5000/product";
     const debugUrl = "http://localhost:5000/debug";
     const buttonId = event.target.id;
     let state = this.state
@@ -52,13 +51,12 @@ class customer extends React.Component {
       fetch(serverUrl, {
         method: 'POST',
         body: JSON.stringify({
-            "customerID": state["customerID"],
+            "productID": state["productID"],
             "name": state["name"],
-            "state": state["State"],
-            "city" : state["City"],
-            "street":state["Street"],
-            "phone" : state["Phone"],
-            "zip": state["ZIP"],
+            "kind": state["kind"],
+            "price" : state["price"],
+            "storeID":state["storeID"],
+            "stock": state["stock"],
             })
       })
       .then(response => {
@@ -73,33 +71,31 @@ class customer extends React.Component {
       .then(object => {
           // console.log(object);
           if (state["httpStatus"] < 300) {
-            state["customerID"]= object["customerID"];
+            state["productID"]= object["productID"];
             state["name"]= object["name"];
-            state["State"]= object["state"];
-            state["City"] = object["city"];
-            state["Street"]=object["street"];
-            state["ZIP"]= object["zip"];
-            state["Phone"]= object["phone"];
+            state["kind"]= object["kind"];
+            state["price"] = object["price"];
+            state["storeID"]=object["storeID"];
+            state["stock"]= object["stock"];
           }
           this.setState(state);
       })
       .catch(error => {
         console.log(error);
-        state["customerID"]= "";
+        state["productID"]= "";
         state["name"]= "";
-        state["State"]= "";
-        state["City"] = "";
-        state["Street"]= "";
-        state["ZIP"]= "";
-        state["Phone"] = "";
+        state["kind"]= "";
+        state["price"] = "";
+        state["storeID"]= "";
+        state["stock"]= "";
         state["errorMsg"] = error;
         this.setState(state);
-      });    
+      });
     }
 
     // ########################## read name ############################
     else if (buttonId === "read") {
-      fetch(serverUrl + "/" + state["customerID"], {
+      fetch(serverUrl + "/" + state["productID"] + "/" + state["storeID"], {
         method: 'GET'
       })
       .then(response => {
@@ -114,44 +110,43 @@ class customer extends React.Component {
       .then(object => {
           // console.log(object);
           if (state["httpStatus"] < 300) {
-            state["customerID"]= object["customerID"];
+            state["productID"]= object["productID"];
             state["name"]= object["name"];
-            state["State"]= object["state"];
-            state["City"] = object["city"];
-            state["Street"]=object["street"];
-            state["ZIP"]= object["zip"];
+            state["kind"]= object["kind"];
+            state["price"] = object["price"];
+            state["storeID"]=object["storeID"];
+            state["stock"]= object["stock"];
           } else {
             state["name"]= "";
-            state["State"]= "";
-            state["City"] = "";
-            state["Street"]= "";
-            state["ZIP"]= "";
+            state["kind"]= "";
+            state["price"] = "";
+            //state["storeID"]= "";
+            state["stock"]= "";
           }
           this.setState(state);
       })
       .catch(error => {
         // console.log(error);
         state["name"]= "";
-        state["State"]= "";
-        state["City"] = "";
-        state["Street"]= "";
-        state["ZIP"]= "";
+        state["kind"]= "";
+        state["price"] = "";
+        //state["storeID"]= "";
+        state["stock"]= "";
         state["errorMsg"] = error;
         this.setState(state);
-      });    
+      });
     }
 
     // ######################### update name ###########################
     else if (buttonId === "update") {
-      fetch(serverUrl + "/" +  state["customerID"], { 
+      fetch(serverUrl + "/" + state["productID"] + "/" + state["storeID"], {
         method: 'PUT',
         body: JSON.stringify({
           "name": state["name"],
-          "state": state["State"],
-          "city" : state["City"],
-          "street":state["Street"],
-          "phone": state["Phone"],
-          "zip": state["ZIP"],
+          "kind": state["kind"],
+          "price" : state["price"],
+          //"storeID":state["storeID"],
+          "stock": state["stock"],
             })
       })
       .then(response => {
@@ -166,12 +161,12 @@ class customer extends React.Component {
       .then(object => {
           // console.log(object);
           if (state["httpStatus"] < 300) {
-            state["customerID"]= object["customerID"];
+            state["productID"]= object["productID"];
             state["name"]= object["name"];
-            state["state"]= object["state"];
-            state["city"] = object["city"];
-            state["street"]=object["street"];
-            state["zip"]= object["zip"];
+            state["kind"]= object["kind"];
+            state["price"] = object["price"];
+            state["storeID"]=object["storeID"];
+            state["stock"]= object["stock"];
           }
           this.setState(state);
       })
@@ -179,12 +174,12 @@ class customer extends React.Component {
         // console.log(error);
         state["errorMsg"] = error;
         this.setState(state);
-      });    
+      });
     }
 
     // ######################### delete name ###########################
     else if (buttonId === "delete") {
-      fetch(serverUrl + "/" + state["customerID"], { 
+      fetch(serverUrl + "/" + state["productID"] + "/" + state["storeID"], {
         method: 'DELETE'
       })
       .then(response => {
@@ -199,13 +194,12 @@ class customer extends React.Component {
       .then(object => {
           // console.log(object);
           if (state["httpStatus"] < 300) {
-            state["customerID"]= object["customerID"];
+            state["productID"]= object["productID"];
             state["name"]= object["name"];
-            state["state"]= object["state"];
-            state["city"] = object["city"];
-            state["street"]=object["street"];
-            state["Phone"] = object["phone"];
-            state["zip"]= object["zip"];
+            state["kind"]= object["kind"];
+            state["price"] = object["price"];
+            state["storeID"]=object["storeID"];
+            state["stock"]= object["stock"];
           }
           this.setState(state);
       })
@@ -213,12 +207,12 @@ class customer extends React.Component {
         // console.log(error);
         state["errorMsg"] = error;
         this.setState(state);
-      });    
+      });
     }
 
     // ######################### debug method ###########################
     else if (buttonId === "debug") {
-      fetch(debugUrl, { 
+      fetch(debugUrl, {
         method: 'GET'
       })
       .then(response => {
@@ -240,13 +234,13 @@ class customer extends React.Component {
       .catch(error => {
         // console.log(error);
         state["name"]= "";
-        state["state"]= "";
-        state["city"] = "";
-        state["street"]= "";
-        state["zip"]= "";
+        state["kind"]= "";
+        state["price"] = "";
+        state["storeID"]= "";
+        state["stock"]= "";
         state["errorMsg"] = error;
         this.setState(state);
-      });    
+      });
     }
   }
 
@@ -255,36 +249,32 @@ class customer extends React.Component {
     const state = this.state;
     return (
     <Row> <Col sm={{ size: 6, offset: 3 }}> <Card className='mt-5'>
-        <CardHeader tag="h3">Welcome</CardHeader>
+        <CardHeader tag="h3">Add Products</CardHeader>
         <CardBody>
-          {/* <InputGroup>
-            <InputGroupAddon addonType="prepend">CustomerID:</InputGroupAddon>
-            <Input value={state["customerID"]} onChange={this.handleChange} id="customerID"/>
-          </InputGroup> <br /> */}
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">ProductID:</InputGroupAddon>
+            <Input value={state["productID"]} onChange={this.handleChange} id="productID"/>
+          </InputGroup> <br />
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">StoreID: </InputGroupAddon>
+            <Input value={state["storeID"]} onChange={this.handleChange} id="storeID"/>
+          </InputGroup> <br />
+          <div> Product Information </div> <br />
           <InputGroup>
             <InputGroupAddon addonType="prepend">Name: </InputGroupAddon>
             <Input value={state["name"]} onChange={this.handleChange} id="name"/>
           </InputGroup> <br />
           <InputGroup>
-            <InputGroupAddon addonType="prepend">Phone:</InputGroupAddon>
-            <Input value={state["Phone"]} onChange={this.handleChange} id="phone"/>
-          </InputGroup> <br />
-          <div> Main Address </div> <br />
-          <InputGroup>
-            <InputGroupAddon addonType="prepend">State: </InputGroupAddon>
-            <Input value={state["State"]} onChange={this.handleChange} id="state"/>
+            <InputGroupAddon addonType="prepend">Kind: </InputGroupAddon>
+            <Input value={state["kind"]} onChange={this.handleChange} id="kind"/>
           </InputGroup> <br />
           <InputGroup>
-            <InputGroupAddon addonType="prepend">City: </InputGroupAddon>
-            <Input value={state["City"]} onChange={this.handleChange} id="city"/>
+            <InputGroupAddon addonType="prepend">Price: </InputGroupAddon>
+            <Input value={state["price"]} onChange={this.handleChange} id="price"/>
           </InputGroup> <br />
           <InputGroup>
-            <InputGroupAddon addonType="prepend">Street: </InputGroupAddon>
-            <Input value={state["Street"]} onChange={this.handleChange} id="street"/>
-          </InputGroup> <br />
-          <InputGroup>
-            <InputGroupAddon addonType="prepend">Zip: </InputGroupAddon>
-            <Input value={state["ZIP"]} onChange={this.handleChange} id="zip"/>
+            <InputGroupAddon addonType="prepend">Stock: </InputGroupAddon>
+            <Input value={state["stock"]} onChange={this.handleChange} id="stock"/>
           </InputGroup> <br />
           <Button color="success" onClick={this.handleClick} id="create">Create</Button>{" "}
           <Button color="primary" onClick={this.handleClick} id="read">Read</Button>{" "}
@@ -292,7 +282,7 @@ class customer extends React.Component {
           <Button color="danger" onClick={this.handleClick} id="delete">Delete</Button>{" "}
           <Button color="secondary" onClick={this.handleClick} id="debug">Debug</Button>{" "}
         </CardBody>
-      <CardFooter> 
+      <CardFooter>
         {"Message: " + state["errorMsg"]}
       </CardFooter>
     </Card> </Col> </Row>
@@ -300,4 +290,4 @@ class customer extends React.Component {
   }
 }
 
-export default customer;
+export default product;
