@@ -2,6 +2,10 @@ import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Customers from './components/customers/customer.js'
+
+import Stores from './components/stores/store.js'
+import Products from './components/products/product.js'
+import ProductsList from './components/productList/productslist.js'
 import Login from './components/login/login.js'
 import PrivateRoutes from './components/privateRoutes/PrivateRoutes.js'
 
@@ -19,7 +23,10 @@ const Navigation = () => (
     <ul>
       <li><NavLink exact activeClassName="current" to='/'>Login</NavLink></li>
       <li><NavLink exact activeClassName="current" to='/customer'>customer</NavLink></li>
+
       <li><NavLink exact activeClassName="current" to='/store'>Store</NavLink></li>
+      <li><NavLink exact activeClassName="current" to='/product'>Product</NavLink></li>
+      <li><NavLink exact activeClassName="current" to='/productlist'>Product List</NavLink></li>
     </ul>
   </nav>
 );
@@ -34,9 +41,18 @@ const Contact = () => (
 
 const Main = () => (
   <Routes>
+//     <Route exact path='/' element={<Home/>}></Route>
+//     <Route exact path='/customer' element={<Customers/>}></Route>
+    {/*<Route exact path='/store' element={<Contact/>}></Route>*/}
+    <Route exact path='/store' element={<Stores/>}></Route>
+    <Route exact path='/product' element={<Products/>}></Route>
+
+    <Route exact path='/productlist' element={<ProductsList/>}></Route>
+
     <Route exact path='/' element={<Login/>}></Route>
     <Route exact path='/customer' element={ <Customers/>}></Route>
-    <Route exact path='/store' element={<Contact/>}></Route>
+//     <Route exact path='/store' element={<Contact/>}></Route>
+
   </Routes>
 );
 
