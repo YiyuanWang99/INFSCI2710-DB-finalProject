@@ -3,6 +3,7 @@ import { NavLink, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './components/login/login.js'
 import Register from './components/register/register.js'
+import Customers from './components/customers/customer.js'
 
 
 
@@ -35,6 +36,8 @@ const Main = () => (
   <Routes>
     <Route exact path='/login' element={<Login/>}></Route>
     <Route exact path='/register' element={ <Register/>}></Route>
+    <Route path='/customer' element={ <Customers/>}></Route>
+    <Route exact path='/store' element={<Contact/>}></Route>
   </Routes>
 );
 

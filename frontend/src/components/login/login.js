@@ -1,6 +1,8 @@
 import React from "react";
 import { Navigate  } from 'react-router-dom';
 import Customers from '../customers/customer.js'
+import mainPage from '../mainPage/mainPage.js'
+import { BrowserRouter } from 'react-router-dom';
 
 class Login extends React.Component {
   state = {
@@ -72,7 +74,7 @@ class Login extends React.Component {
 
     var loginButton;
     if (isLoggedIn) {
-      return <Navigate to="/customer" />
+      return <Navigate to="/customer/1" />
       //loginButton = <input type="submit" value="logout" />;
     } else {
       loginButton = <input type="submit" value="login" />;

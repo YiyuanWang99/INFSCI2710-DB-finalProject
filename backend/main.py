@@ -68,8 +68,8 @@ def protected():
 
 ##########################  API Implementation #########################
 # https://github.com/Jiangyiqun/fullstack_tutorial/tree/master/documentation
-############################## create name #############################
-@app.route('/customer', methods = ["POST"])
+############################## create customer #############################
+@app.route('/register', methods = ["POST"])
 def create_customer():
     # # read Data
     data_json = request.data
