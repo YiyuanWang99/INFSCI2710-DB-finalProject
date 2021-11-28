@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24fedbaf-f7df-44f1-900e-3e732e5bdbf5" name="Changes" comment="product2">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+    <list default="true" id="ce8712aa-51f6-420d-939d-b8264ce6ca06" name="Changes" comment="uodate productlist">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +14,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="21TpUCqKGYo9TdtzRVj80BSp4c9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
