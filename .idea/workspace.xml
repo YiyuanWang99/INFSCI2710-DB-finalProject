@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24fedbaf-f7df-44f1-900e-3e732e5bdbf5" name="Changes" comment="product2" />
+    <list default="true" id="24fedbaf-f7df-44f1-900e-3e732e5bdbf5" name="Changes" comment="product2">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/productList/productslist.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/products/product.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/stores/store.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +158,6 @@
     <MESSAGE value="have a try" />
     <MESSAGE value="product" />
     <MESSAGE value="product2" />
-    <MESSAGE value="add productlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="add productlist" />
+    <option name="LAST_COMMIT_MESSAGE" value="product2" />
   </component>
 </project>
