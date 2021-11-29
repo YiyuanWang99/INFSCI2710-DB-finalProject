@@ -11,11 +11,6 @@ set t_error = 1;
 SELECT 'procedure failed, rolling back.' AS msg;
 end;
 
-declare continue handler for sqlstate '1022'
-begin
-set t_error = 1;
-SELECT 'Duplicate Key.' AS msg;
-end;
 
 	start transaction;
     if(storeID = '') then
